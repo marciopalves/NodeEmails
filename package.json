@@ -1,0 +1,26 @@
+{
+  "name": "nodeemails",
+  "version": "1.0.0",
+  "description": "Api Node utilizando o Nodemailer para geração de e-mails profissionais.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marciopalves/NodeEmails.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marciopalves/NodeEmails/issues"
+  },
+  "homepage": "https://github.com/marciopalves/NodeEmails#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.1"
+  }
+}
