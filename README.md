@@ -13,3 +13,7 @@ https://mailtrap.io/home
 
 # Rode o comando node Server.js  -- Para roda o programa
 
+
+Link do video youtube
+https://www.youtube.com/watch?v=6GW0DDoy0UE
+
