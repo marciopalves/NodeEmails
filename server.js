@@ -72,6 +72,46 @@ app.get("/sendhtml", async (req, res)=>{
   });
 
 
+app.get("/sendanexo", async (req, res)=>{
+
+    //transport
+    var transport = nodemailer.createTransport({
+      host: process.env.HOST_MAIL,
+      port: process.env.HOST_PORT,
+      auth: {
+        user: process.env.HOST_USER,
+        pass: process.env.HOST_PASS
+      }
+    });
+
+  //Config Email 
+  let message = await transport.sendMail({
+      from: '"Pessoa Teste" <pessoa@teste.com>',
+      to:"teste@teste.com",
+      subject:"Email Anexo",
+      text: "Email Teste com Anexo",
+      html: "<p><strong>Test Nodemailer</strong> Test Nodemailer With mail trap </p>",
+      attachments: [{
+        filename: 'Capa.pdf',
+        path: __dirname + '/Capa.pdf',   
+        contentType: 'application/pdf'
+      }],
+      function(err, info) {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log(info);
+        }
+      }
+      
+      
+  });
+
+  res.send("E-mail com anexo enviado com sucesso!");
+
+});
+
+
 app.listen(port, ()=>{
     console.log(`Rodando na porta ${port}...`)
 });
